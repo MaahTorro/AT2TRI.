@@ -26,16 +26,20 @@
             <tr>        
                     <td><%=resultado[n].produto%></td>
                     <td><%=(resultado[n].validade).toDateString()%></td>
-                    <td><i class="bi bi-emoji-smile btn btn-outline-success"></i></td>
-                    <td><i class="bi bi-emoji-frown btn btn-outline-dark"></i></td>
+                    <td><i class="bi bi-emoji-smile btn btn-outline-success" onclick="window.location='/consumido/<%=resultado[n]._id%>'"></i></td>
+                    <td><i class="bi bi-emoji-frown btn btn-outline-dark" onclick="window.location='/vencido/<%=resultado[n]._id%>'"></i></td>
                     <td><i class="bi bi-emoji-dizzy btn btn-outline-danger" onclick="window.location='/excluir/<%=resultado[n]._id%>'"></i></td>
 
                     <%}%>
- 
                 </tr>
         </table>
-    </div>
-    </div>  
+    </div>      
+    <div class="container">              
+                    <input type="button" value="Produtos Vencidos" class="form-control btn btn-outline-dark" onclick="window.location='/vencido'">
+                    <input type="button" value="Produtos Consumidos" class="form-control btn btn-outline-info" onclick="window.location='/consumido'">
+
+   </div>
+ </div>  
 </body>
 
 </html>

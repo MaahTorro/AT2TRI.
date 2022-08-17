@@ -12,13 +12,12 @@
 <body> 
 
     
-    <h1 class="text-center">Controle de Validades<span> <i class="bi bi-bag-plus-fill btn" onclick="window.location = '/cadastro'"></i> </span> </h1>
+    <h1 class="text-center">Produtos Vencidos</h1>
     
     <div class="container">
-    <table class="table table-striped gb-dark"> 
+    <table class="table table-striped"> 
             <tr> 
-                <th><i class="bi bi-check"></i>Produto:</th>
-                <th onclick="window.location='/'"   role="button"></i>Validade:</th>
+                <th ><i class="bi bi-check"></i>Validade:</th>
                 <th colspan="3">Ações</th>
 
             </tr>
@@ -26,20 +25,17 @@
             <tr>        
                     <td><%=resultado[n].produto%></td>
                     <td><%=(resultado[n].validade).toDateString()%></td>
-                    <td><i class="bi bi-emoji-smile btn btn-outline-success" onclick="window.location='/consumido/<%=resultado[n]._id%>'"></i></td>
-                    <td><i class="bi bi-emoji-frown btn btn-outline-dark" onclick="window.location='/vencido/<%=resultado[n]._id%>'"></i></td>
+                    <td><i class="bi bi-emoji-neutral btn btn-outline-warning"  onclick="window.location='/desfazer/<%=resultado[n]._id%>?redirect=vencido'"></i></td>
                     <td><i class="bi bi-emoji-dizzy btn btn-outline-danger" onclick="window.location='/excluir/<%=resultado[n]._id%>'"></i></td>
 
                     <%}%>
  
                 </tr>
-        </table>
+        </table>  
     </div>
-    <div class="container">              
-        <input type="button" value="Produtos Vencidos" class="form-control btn btn-outline-dark" onclick="window.location='/vencido'">
-                    <input type="button" value="Produtos Consumidos" class="form-control btn btn-outline-info" onclick="window.location='/consumido'">
-</div>
-
+    <div class="container">
+        <input type="button" value="Voltar" class="form-control btn btn-outline-primary" onclick="window.location='/'">
+    </div>
     </div>  
 </body>
 

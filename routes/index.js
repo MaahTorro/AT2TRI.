@@ -16,7 +16,7 @@ module.exports = (app) =>{
 
         conexao()
 
-        const resultado = await produto.find().sort({validade:1})
+        const resultado = await produto.find({ status: 0}).sort({validade:1})
 
         res.render('index.ejs', { resultado })
     })
@@ -25,7 +25,7 @@ module.exports = (app) =>{
         
         conexao()
 
-        const resultado = await produto.find().sort({produto:1})
+        const resultado = await produto.find({ status: 0}).sort({produto:1})
 
         res.render('indexp.ejs', { resultado })
     })
